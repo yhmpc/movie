@@ -11,39 +11,39 @@ import java.util.Date;
  * @Author yhm
  * @Date 4/11/2020 14:13
  */
-@Document(indexName = "movie", type = "_doc", shards = 1, replicas = 0)
+@Document(indexName = "movie", shards = 1, replicas = 0)
 public class MovieEs {
     @Id
     private String id;
 
-    @Field(store = true, type = FieldType.Integer)
+    @Field(type = FieldType.Integer)
     private Integer rank;
 
-    @Field(store = true, type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
+    @Field(type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
     private String firstTitle;
 
-    @Field(store = true, type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
+    @Field(type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
     private String secondTitle;
 
-    @Field(store = true, type = FieldType.Date)
+    @Field(type = FieldType.Date)
     private Date year;
 
-    @Field(store = true, type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
+    @Field(type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
     private String country;
 
-    @Field(store = true, type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
+    @Field(type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
     private String type;
 
-    @Field(store = true, type = FieldType.Double)
+    @Field(type = FieldType.Double)
     private Double score;
 
-    @Field(store = true, type = FieldType.Long)
+    @Field(type = FieldType.Long)
     private Long votes;
 
     @Field(type = FieldType.Text, analyzer = "ik_smart", searchAnalyzer = "ik_smart")
     private String quote;
 
-    @Field(index = false, store = true, type = FieldType.Keyword)
+    @Field(index = false, type = FieldType.Keyword)
     private String image;
 
     public String getId() {
